@@ -31,24 +31,26 @@
             <version>9.1-901-1.jdbc4</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>2.0.1</version>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <configuration>
-                            <propertyFile>src/main/dbschema/liquibase.properties</propertyFile>
-                        </configuration>
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+    <build>    
+	    <pluginManagement>
+	        <plugins>
+	            <plugin>
+	                <groupId>org.liquibase</groupId>
+	                <artifactId>liquibase-maven-plugin</artifactId>
+	                <version>2.0.1</version>
+	                <executions>
+	                    <execution>
+	                        <phase>process-resources</phase>
+	                        <configuration>
+	                            <propertyFile>src/main/dbschema/liquibase.properties</propertyFile>
+	                        </configuration>
+	                        <goals>
+	                            <goal>update</goal>
+	                        </goals>
+	                    </execution>
+	                </executions>
+	            </plugin>
+	        </plugins>
+        </pluginManagement>
     </build>
 </project>
